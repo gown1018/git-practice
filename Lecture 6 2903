@@ -1,0 +1,6 @@
+a=input()
+a=int(a)
+b=1
+c=b+2**a
+d=c**2
+print(d)
