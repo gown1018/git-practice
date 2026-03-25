@@ -1,0 +1,3 @@
+a=input()
+b=oct(int(a,2))[2:]
+print(b)
