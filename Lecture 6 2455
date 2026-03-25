@@ -1,0 +1,7 @@
+sum=0
+ls=list()
+for i in range(4):
+ a,b=map(int,input().split())
+ sum+=b-a
+ ls.append(sum)
+print(max(ls))
