@@ -1,1 +1,12 @@
-# git-practice
+a=input()
+a=int(a)
+b=input()
+b=int(b)
+c=b//10
+d=b%10
+e=c//10
+f=c%10
+print(a*d)
+print(f*a)
+print(a*e)
+print(a*b)
