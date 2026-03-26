@@ -1,0 +1,13 @@
+a=int(input())
+original=a
+total=0
+e=a
+while True:
+ b=e//10
+ c=e%10
+ d=(b+c)%10
+ e=c*10+d
+ total+=1
+ if e==original:
+  break
+print(total)
