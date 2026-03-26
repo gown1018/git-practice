@@ -1,0 +1,14 @@
+a=int(input())
+b=a//2
+c=a%2
+if c==0:
+  c=b
+else:
+  b+=1
+  c=a-b
+if a==1:
+  print("*")
+else:
+ for i in range(a):
+    print(("*"+" ")*(b))
+    print((" "+"*")*(c))
