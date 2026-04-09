@@ -1,0 +1,12 @@
+import sys
+input=sys.stdin.readline
+a=int(input().rstrip())
+s=set()
+for i in range(a):
+    b,c=input().rstrip().split()
+    if c=="enter":
+        s.add(b)
+    else:
+        s.remove(b)
+for n in sorted(s,reverse=True):
+    print(n)

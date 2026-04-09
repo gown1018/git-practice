@@ -1,0 +1,22 @@
+import sys
+input=sys.stdin.readline
+a=int(input())
+b=int(input())
+ls=[]
+count=0
+for i in range(a,b+1):
+    if i<2:
+          continue
+    sum=True
+    for ch in range(2,int(i**0.5)+1):
+        if i%ch==0:
+            sum=False
+            break
+    if sum:
+         ls.append(i)
+         count+=i
+if ls:
+      print(count)
+      print(min(ls))
+else:
+      print(-1)

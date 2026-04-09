@@ -1,0 +1,9 @@
+import sys
+input=sys.stdin.readline
+from collections import Counter
+a=int(input().rstrip())
+b=list(map(int,input().rstrip().split()))
+c=int(input().rstrip())
+d=list(map(int,input().rstrip().split()))
+counter=Counter(b)
+print(*(counter[t] for t in d))

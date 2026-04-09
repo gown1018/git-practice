@@ -1,0 +1,12 @@
+import sys
+input=sys.stdin.readline
+from collections import Counter
+a=int(input().rstrip())
+ls=[]
+for i in range(a):
+    b=input().rstrip()
+    ls.append(b)
+counter=Counter(ls)
+max_count = max(counter.values())
+modes = [k for k, v in counter.items() if v == max_count]
+print(sorted(modes)[0])

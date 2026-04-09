@@ -1,0 +1,9 @@
+import sys
+input=sys.stdin.readline
+b=[]
+for i in range(10):
+    a=int(input())
+    c=a%42
+    b.append(c)
+k=set(b)
+print(len(k))

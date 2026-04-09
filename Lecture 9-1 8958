@@ -1,0 +1,17 @@
+import sys
+input=sys.stdin.readline
+a=int(input().rstrip())
+for ch in range(a):
+    ls=[]
+    score=0
+    imsi=0
+    no=0
+    b=input().rstrip()
+    ls=list(b)
+    for i in range(0,len(ls)):
+        if ls[i]=="O":
+            imsi+=1
+            no+=imsi
+        else:
+            imsi=0
+    print(no)

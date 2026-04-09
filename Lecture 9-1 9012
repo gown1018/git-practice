@@ -1,0 +1,21 @@
+import sys
+input=sys.stdin.readline
+a=int(input().rstrip())
+ls=[]
+for k in range(a):
+ ls=[]
+ b=input()
+ v=True
+ for i in b:
+    if i=="(":
+        ls.append(i)
+    elif i==")":
+        if ls:
+          ls.pop()
+        else:
+           v=False
+           break
+ if v and len(ls)==0:
+    print("YES")
+ else:
+    print("NO")

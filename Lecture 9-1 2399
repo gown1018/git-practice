@@ -1,0 +1,9 @@
+import sys
+input=sys.stdin.readline
+a=int(input().rstrip())
+ls=list(map(int,input().split()))
+ls.sort()
+count=0
+for i in range(a):
+    count+=ls[i] * (2*i - a + 1)
+print(count*2)

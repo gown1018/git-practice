@@ -1,0 +1,9 @@
+import sys
+input=sys.stdin.readline
+a=list(map(int,input().rstrip().split()))
+n=len(a)
+for ch in range(n):
+  for i in range(0,n-ch-1):
+    if a[i]>a[i+1]:
+        a[i],a[i+1]=a[i+1],a[i]
+print(a)

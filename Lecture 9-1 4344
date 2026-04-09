@@ -1,0 +1,16 @@
+import sys
+input=sys.stdin.readline
+a=int(input())
+for i in range(a):
+    b=list(map(int, input().split()))
+    num=b[0]
+    count=0
+    count_2=0
+    for i in range(num):
+        count+=b[i+1]
+    p=count/num
+    for i in range(num):
+        if b[i+1]>p:
+            count_2+=1
+    k=count_2/num*100
+    print(f"{k:.3f}%")

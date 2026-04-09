@@ -1,0 +1,14 @@
+import sys
+input=sys.stdin.readline
+a=int(input().rstrip())
+ls=[]
+count=0
+for i in range(a):
+    b=int(input().rstrip())
+    if b==0:
+        ls.pop()
+    else:
+        ls.append(b)
+for i in range(len(ls)):
+    count+=ls[i]
+print(count)
