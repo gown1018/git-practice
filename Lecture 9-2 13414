@@ -1,5 +1,10 @@
 import sys
 input=sys.stdin.readline
 a,b=map(int,input().split())
+ls={}
 for i in range(b):
     number=input().rstrip()
+    ls[number]=i
+sorted_= sorted(ls.items(), key=lambda x: x[1])
+for i in range(min(a, len(sorted_))):
+    print(sorted_[i][0])
