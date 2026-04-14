@@ -1,0 +1,16 @@
+import sys
+input=sys.stdin.readline
+a=int(input())
+if a<100:
+    print(a)
+elif a==1000:
+   print(144)
+else:
+    k=99
+    for i in range(100,a+1):
+     b=i//100
+     c=(i-b*100)//10
+     d=i-b*100-c*10
+     if (b+d)/2==c:
+       k+=1
+    print(k)
