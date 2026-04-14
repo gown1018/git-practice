@@ -1,0 +1,11 @@
+import sys
+input=sys.stdin.readline
+a,b=map(int,input().split())
+ls=[]
+for ch in range(a):
+    ls.append(0)
+for i in range(b):
+    c,d,e=map(int,input().split())
+    for h in range(c-1,d):
+        ls[h]=e
+print(*ls)
