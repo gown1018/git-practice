@@ -1,0 +1,39 @@
+import sys
+import random
+input=sys.stdin.readline
+n=int(input())
+lst=[]
+for _ in range(3):
+    ls=[[random.randint(1, n*n*10 - 1) for _ in range(n)] for _ in range(n)]
+    lst.append(ls)
+a=lst[0]
+b=lst[1]
+c=lst[2]
+AB = []
+for i in range(n):
+    row = []
+    for j in range(n):
+        s = 0
+        for k in range(n):
+            s += a[i][k] * b[k][j]
+        row.append(s)
+    AB.append(row)
+result = []
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(AB[i][j] + c[i][j])
+    result.append(row)
+print("A")  # 첫 번째 행렬 출력
+for r in a:
+    print(*r)
+
+print("B") # 두 번째 행렬 출력
+for r in b:
+    print(*r)
+
+print("C") # 세 번째 행렬 출력
+for r in c:
+    print(*r)
+for r in result: # A*B+C 출력
+    print(*r)
