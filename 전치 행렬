@@ -1,0 +1,17 @@
+import random
+import sys
+input=sys.stdin.readline
+n=int(input())
+ls=[[random.randint(1, n*n*10 - 1) for _ in range(n)] for _ in range(n)]
+for i in ls:
+    print(*i)
+T = []
+for i in range(len(ls[0])):
+    row = []
+    for j in range(len(ls)):
+        row.append(ls[j][i])
+    T.append(row)
+print()
+print("전치 행렬")
+for r in T: #전치 행렬 출력
+    print(*r)
