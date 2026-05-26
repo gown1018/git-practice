@@ -1,0 +1,58 @@
+import os
+
+dir1 = input("첫 번째 디렉토리 이름: ")
+dir2 = input("두 번째 디렉토리 이름: ")
+
+files1 = os.listdir(dir1)
+files2 = os.listdir(dir2)
+
+same = True
+
+# 파일 개수 비교
+if len(files1) != len(files2):
+    print("파일 개수가 다릅니다.")
+    same = False
+else:
+    print("파일 개수가 같습니다.")
+
+# 파일 이름 비교
+if set(files1) != set(files2):
+    print("파일 이름이 다릅니다.")
+    same = False
+
+# 파일 비교
+for file in files1:
+
+    path1 = os.path.join(dir1, file)
+    path2 = os.path.join(dir2, file)
+
+    # 파일 존재 여부 확인
+    if not os.path.exists(path2):
+        print(f"{file}: 두 번째 디렉토리에 없습니다.")
+        same = False
+        continue
+
+    # 파일 크기 비교
+    size1 = os.path.getsize(path1)
+    size2 = os.path.getsize(path2)
+
+    if size1 != size2:
+        print(f"{file}: 파일 크기가 다릅니다.")
+        same = False
+        continue
+
+    # 파일 내용 비교
+    with open(path1, "r", encoding="utf-8") as f1:
+        content1 = f1.read()
+
+    with open(path2, "r", encoding="utf-8") as f2:
+        content2 = f2.read()
+
+    if content1 != content2:
+        print(f"{file}: 파일 내용이 다릅니다.")
+        same = False
+
+if same:
+    print("두 디렉토리는 완전히 같습니다.")
+else:
+    print("두 디렉토리는 서로 다릅니다.")
